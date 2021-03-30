@@ -1,0 +1,25 @@
+{
+  "name": "backendtypescriptboilerplate",
+  "version": "1.0.0",
+  "description": "A Backend With Node.js And Typescript Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "dev":"concurrently npm:start:*",
+    "start:build": "tsc -w",
+    "start:run": "nodemon dist/index.js",
+    "prod": "tsc",
+    "start": "node dist/index.js"
+  },
+  "author": "tarkesh2shar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.37",
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "reflect-metadata": "^0.1.13"
+  }
+}
