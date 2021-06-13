@@ -1,8 +1,29 @@
-console.log("are you ok ?????????????????????????????");
-function x(a:string,b:string){
-    console.log(a+b);
-    
-}
+import logger from './app/logger';
+import {startBootstrapProcess,BootStrapLoader} from "@utilitiesfornodejs/bootstrapper"
+import {expressLoader} from './app/loaders/expressLoader';
+import {winstonLoader} from './app/loaders/winstonLoader';
 
-x("Hee",'asdasd');
-//
+startBootstrapProcess({
+    config:{
+        showBootstrapTime:true,
+        logo:"tarkesh2shar"
+    },
+    loaders:[
+        winstonLoader  as BootStrapLoader, 
+        expressLoader as BootStrapLoader 
+       
+    ]
+}).then((state)=>{
+    
+    return state.shutdown()
+     
+}).catch(err=> logger.error('Application is crashed: ' + err));
+
+
+
+
+
+
+
+
+
